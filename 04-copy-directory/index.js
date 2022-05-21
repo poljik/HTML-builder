@@ -13,9 +13,9 @@ const pathTo = path.join(__dirname,'files-copy');
   });
 
   const filesFrom = await fs.readdir(pathFrom);
-	filesFrom.forEach(element => {
+  filesFrom.forEach(element => {
     let from = path.join(pathFrom, element);
     let to = path.join(pathTo, element);
     fs.copyFile(from, to);
-	});
+  });
 } () );
