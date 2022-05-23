@@ -9,6 +9,7 @@ const pathSecret = path.join(__dirname,'secret-folder');
       const filePath = path.join(pathSecret, element.name);
       const fileName = element.name.split('.');
       fs.stat(filePath, (err, stats) => {
+        if (err) throw err;
         console.log(fileName[0],'-', fileName[1], '-', stats.size);
       });
     }
