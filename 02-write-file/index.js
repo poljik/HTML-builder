@@ -7,7 +7,7 @@ const output = fs.createWriteStream(pathFile);
 console.log('Please, enter something funny here:');
 
 process.stdin.on('data', txt => {
-  if(txt.toString().slice(0,-1) === 'exit') process.exit();
+  if(txt.toString().trim() === 'exit') process.exit();
   output.write(txt);
 });
 
